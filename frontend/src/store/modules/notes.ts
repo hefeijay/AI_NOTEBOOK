@@ -60,7 +60,7 @@ const notesModule: Module<NotesState, unknown> = {
   },
 
   actions: {
-    async fetchNotes({ commit }) {
+    async fetchNotes({ commit }: { commit: any }) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       try {
@@ -75,7 +75,7 @@ const notesModule: Module<NotesState, unknown> = {
       }
     },
 
-    async fetchNote({ commit }, id: string) {
+    async fetchNote({ commit }: { commit: any }, id: string) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       try {
@@ -91,7 +91,7 @@ const notesModule: Module<NotesState, unknown> = {
       }
     },
 
-    async createNote({ commit }, data: CreateNoteDto) {
+    async createNote({ commit }: { commit: any }, data: CreateNoteDto) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       try {
@@ -107,7 +107,7 @@ const notesModule: Module<NotesState, unknown> = {
       }
     },
 
-    async updateNote({ commit }, { id, data }: { id: string; data: UpdateNoteDto }) {
+    async updateNote({ commit }: { commit: any }, { id, data }: { id: string; data: UpdateNoteDto }) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       try {
@@ -132,7 +132,7 @@ const notesModule: Module<NotesState, unknown> = {
       }
     },
 
-    async deleteNote({ commit }, id: string) {
+    async deleteNote({ commit }: { commit: any }, id: string) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       try {

@@ -26,7 +26,7 @@ export interface AIProcessResponse {
 }
 
 export interface WebSocketMessage {
-  type: 'note_update' | 'note_create' | 'note_delete' | 'collaboration'
+  type: 'note_update' | 'note_create' | 'note_delete' | 'collaboration' | 'ping'
   payload: unknown
 }
 

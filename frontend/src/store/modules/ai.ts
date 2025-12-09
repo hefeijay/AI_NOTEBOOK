@@ -40,23 +40,23 @@ const aiModule: Module<AIState, unknown> = {
   },
 
   actions: {
-    setProcessing({ commit }, processing: boolean) {
+    setProcessing({ commit }: { commit: any }, processing: boolean) {
       commit('SET_PROCESSING', processing)
     },
 
-    setResult({ commit }, result: string) {
+    setResult({ commit }: { commit: any }, result: string) {
       commit('SET_RESULT', result)
     },
 
-    appendResult({ commit }, chunk: string) {
+    appendResult({ commit }: { commit: any }, chunk: string) {
       commit('APPEND_RESULT', chunk)
     },
 
-    setError({ commit }, error: string | null) {
+    setError({ commit }: { commit: any }, error: string | null) {
       commit('SET_ERROR', error)
     },
 
-    reset({ commit }) {
+    reset({ commit }: { commit: any }) {
       commit('RESET')
     }
   },

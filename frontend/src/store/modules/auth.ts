@@ -58,7 +58,7 @@ const authModule: Module<AuthState, unknown> = {
   },
 
   actions: {
-    async login({ commit }, { username, password }) {
+    async login({ commit }: { commit: any }, { username, password }: { username: string; password: string }) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       try {
@@ -85,7 +85,7 @@ const authModule: Module<AuthState, unknown> = {
       }
     },
 
-    async register({ commit }, { username, password }) {
+    async register({ commit }: { commit: any }, { username, password }: { username: string; password: string }) {
       commit('SET_LOADING', true)
       commit('SET_ERROR', null)
       try {
@@ -104,7 +104,7 @@ const authModule: Module<AuthState, unknown> = {
       }
     },
 
-    async getCurrentUser({ commit, state }) {
+    async getCurrentUser({ commit, state }: { commit: any; state: any }) {
       if (!state.token) {
         return null
       }
@@ -119,7 +119,7 @@ const authModule: Module<AuthState, unknown> = {
       }
     },
 
-    logout({ commit }) {
+    logout({ commit }: { commit: any }) {
       commit('LOGOUT')
     }
   },

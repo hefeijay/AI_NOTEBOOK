@@ -38,7 +38,7 @@ interface Emits {
 }
 
 const props = defineProps<Props>()
-const emit = defineEmits<Emits>()
+const _emit = defineEmits<Emits>()
 
 const editor = ref<Editor | undefined>(undefined)
 let editorInitialized = false // 标记编辑器是否已初始化

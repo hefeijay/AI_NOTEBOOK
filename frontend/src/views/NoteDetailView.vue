@@ -74,7 +74,6 @@ const selectedText = ref('')
 const selectedRange = ref<{ start: number; end: number } | null>(null) // 保存选中范围
 const hasSelection = ref(false)
 const buttonText = ref('AI处理整篇笔记')
-const noteEditorRef = ref<InstanceType<typeof NoteEditor> | null>(null)
 const editorRef = ref<InstanceType<typeof TipTapEditor> | null>(null)
 const saving = ref(false)
 const savingStatus = ref('')
@@ -377,7 +376,7 @@ const handleAccept = async () => {
   let replaced = false
   
   // 优先使用编辑器的 replaceSelection 方法（最准确）
-  if (hasValidRange && hasValidText && editorRef.value) {
+  if (hasValidRange && hasValidText && editorRef.value && selectedRange.value) {
     // 使用保存的范围替换（即使当前没有选中，也能恢复选中并替换）
     const { start, end } = selectedRange.value
     replaced = editorRef.value.replaceSelection(aiResult.value, start, end)
